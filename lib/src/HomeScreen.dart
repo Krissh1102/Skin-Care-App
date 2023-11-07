@@ -4,7 +4,7 @@ import 'package:assignment2/models/Vertical_slide/verticalTabdata.dart';
 import 'package:assignment2/src/ProductScreen.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeSrc extends StatefulWidget {
@@ -346,7 +346,7 @@ class _HomeSrcState extends State<HomeSrc> {
                 padding: const EdgeInsets.only(left: 10),
                 child: const Row(
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       width: 40,
                     ),
                     Text(
@@ -373,7 +373,10 @@ class _HomeSrcState extends State<HomeSrc> {
   Widget _Horizontalview(int index) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => const ProductScreen());
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ProductScreen()),
+        );
       },
       child: Container(
         width: 230,
